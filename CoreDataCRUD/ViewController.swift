@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
     @IBOutlet var coreDataCRUDtableView: UITableView!
     
-    var people = [String]()
+    var people = [Person]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,13 +31,23 @@ class ViewController: UIViewController {
         
         let alertAction = UIAlertAction(title: "Post", style: .default) { (_) in
             let name = alert.textFields?.first?.text! ?? ""
-            let age = alert.textFields?.last?.text
+            let age = alert.textFields?.last?.text!
             print("Name: \(name)")
             print("Age: \(age!)")
+            // -- use object from model
+            let person = Person(context: PersistenceService.context)
+            person.name = name
+            person.age = Int16(age!)!
+            PersistenceService.saveContext()
+            self.people.append(person)
+            print("P Name: \(person.name!)")
+            print("P Age: \(person.age)")
+            self.coreDataCRUDtableView.reloadData()
         }
-        
+       
         alert.addAction(alertAction)
         present(alert, animated: true, completion: nil)
+        
     }
 }
 extension ViewController: UITableViewDataSource{
@@ -49,8 +59,8 @@ extension ViewController: UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-        cell.textLabel?.text = ""
-        cell.detailTextLabel?.text = ""
+        cell.textLabel?.text = "Name: \(people[indexPath.row].name!) Age: \(people[indexPath.row].age)"
+        cell.detailTextLabel?.text = String(people[indexPath.row].age)
         return cell
     }
 }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0B7E213C2067519300ECE446 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7E213B2067519300ECE446 /* PersistenceService.swift */; };
+		0B7E213F20676E2E00ECE446 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7E213D20676E2E00ECE446 /* Person+CoreDataClass.swift */; };
+		0B7E214020676E2E00ECE446 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7E213E20676E2E00ECE446 /* Person+CoreDataProperties.swift */; };
 		0BFEA3B220674BFF00B1CDB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFEA3B120674BFF00B1CDB6 /* AppDelegate.swift */; };
 		0BFEA3B420674BFF00B1CDB6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFEA3B320674BFF00B1CDB6 /* ViewController.swift */; };
 		0BFEA3B720674BFF00B1CDB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BFEA3B520674BFF00B1CDB6 /* Main.storyboard */; };
@@ -37,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		0B7E213B2067519300ECE446 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		0B7E213D20676E2E00ECE446 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0B7E213E20676E2E00ECE446 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0BFEA3AE20674BFF00B1CDB6 /* CoreDataCRUD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataCRUD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BFEA3B120674BFF00B1CDB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BFEA3B320674BFF00B1CDB6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 		0BFEA3A520674BFF00B1CDB6 = {
 			isa = PBXGroup;
 			children = (
+				0B7E213D20676E2E00ECE446 /* Person+CoreDataClass.swift */,
+				0B7E213E20676E2E00ECE446 /* Person+CoreDataProperties.swift */,
 				0BFEA3B020674BFF00B1CDB6 /* CoreDataCRUD */,
 				0BFEA3C820674BFF00B1CDB6 /* CoreDataCRUDTests */,
 				0BFEA3D320674BFF00B1CDB6 /* CoreDataCRUDUITests */,
@@ -267,6 +273,8 @@
 			files = (
 				0BFEA3BA20674BFF00B1CDB6 /* CoreDataCRUD.xcdatamodeld in Sources */,
 				0B7E213C2067519300ECE446 /* PersistenceService.swift in Sources */,
+				0B7E214020676E2E00ECE446 /* Person+CoreDataProperties.swift in Sources */,
+				0B7E213F20676E2E00ECE446 /* Person+CoreDataClass.swift in Sources */,
 				0BFEA3B420674BFF00B1CDB6 /* ViewController.swift in Sources */,
 				0BFEA3B220674BFF00B1CDB6 /* AppDelegate.swift in Sources */,
 			);

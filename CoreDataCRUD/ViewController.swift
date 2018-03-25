@@ -17,12 +17,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let fetchRequest: NSFetchRequest<Person> = Person.fetchRequest()
-        do{
-            let person = try PersistenceService.context.fetch(fetchRequest)
-            self.people = person
-            self.coreDataCRUDtableView.reloadData()
-        }catch{}
+        getPeople()
     }
 
     @IBAction func onPlusTapped(_ sender: Any) {
@@ -55,6 +50,14 @@ class ViewController: UIViewController {
         present(alert, animated: true, completion: nil)
         
     }
+    func getPeople(){
+        let fetchRequest: NSFetchRequest<Person> = Person.fetchRequest()
+        do{
+            let person = try PersistenceService.context.fetch(fetchRequest)
+            self.people = person
+            self.coreDataCRUDtableView.reloadData()
+        }catch{}
+    }
 }
 extension ViewController: UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -68,6 +71,9 @@ extension ViewController: UITableViewDataSource{
         cell.textLabel?.text = "Name: \(people[indexPath.row].name!) Age: \(people[indexPath.row].age)"
         cell.detailTextLabel?.text = String(people[indexPath.row].age)
         return cell
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        getPeople()
     }
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B46663B20677E8E008FDEC6 /* AddUpdatePersonUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B46663A20677E8E008FDEC6 /* AddUpdatePersonUIViewController.swift */; };
 		0B7E213C2067519300ECE446 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7E213B2067519300ECE446 /* PersistenceService.swift */; };
 		0B7E213F20676E2E00ECE446 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7E213D20676E2E00ECE446 /* Person+CoreDataClass.swift */; };
 		0B7E214020676E2E00ECE446 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7E213E20676E2E00ECE446 /* Person+CoreDataProperties.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B46663A20677E8E008FDEC6 /* AddUpdatePersonUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUpdatePersonUIViewController.swift; sourceTree = "<group>"; };
 		0B7E213B2067519300ECE446 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		0B7E213D20676E2E00ECE446 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0B7E213E20676E2E00ECE446 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				0BFEA3C020674BFF00B1CDB6 /* Info.plist */,
 				0BFEA3B820674BFF00B1CDB6 /* CoreDataCRUD.xcdatamodeld */,
 				0B7E213B2067519300ECE446 /* PersistenceService.swift */,
+				0B46663A20677E8E008FDEC6 /* AddUpdatePersonUIViewController.swift */,
 			);
 			path = CoreDataCRUD;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			files = (
 				0BFEA3BA20674BFF00B1CDB6 /* CoreDataCRUD.xcdatamodeld in Sources */,
 				0B7E213C2067519300ECE446 /* PersistenceService.swift in Sources */,
+				0B46663B20677E8E008FDEC6 /* AddUpdatePersonUIViewController.swift in Sources */,
 				0B7E214020676E2E00ECE446 /* Person+CoreDataProperties.swift in Sources */,
 				0B7E213F20676E2E00ECE446 /* Person+CoreDataClass.swift in Sources */,
 				0BFEA3B420674BFF00B1CDB6 /* ViewController.swift in Sources */,

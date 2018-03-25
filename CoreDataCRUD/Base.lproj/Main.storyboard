@@ -44,6 +44,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="coreDataCRUDtableView" destination="0dU-UU-Jxm" id="TxD-sI-N64"/>
+                        <segue destination="Aru-dA-5G8" kind="show" identifier="showEdit" id="yFN-es-xwO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -134,4 +135,7 @@
             <point key="canvasLocation" x="-278" y="117"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="yFN-es-xwO"/>
+    </inferredMetricsTieBreakers>
 </document>

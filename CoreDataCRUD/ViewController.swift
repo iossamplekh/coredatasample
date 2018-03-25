@@ -78,6 +78,8 @@ extension ViewController: UITableViewDataSource,UITableViewDelegate{
         getPeople()
     }
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let person = self.people[indexPath.row]
+        
         let delete = UITableViewRowAction(style: .destructive, title: "delete") { (action, index) in
             let alertDelete = UIAlertController(title: "Do you want delete?", message: nil, preferredStyle: .alert)
             
@@ -92,7 +94,22 @@ extension ViewController: UITableViewDataSource,UITableViewDelegate{
             self.present(alertDelete, animated: true, completion: nil)
             self.coreDataCRUDtableView.reloadData()
         }
-        return [delete]
+        let edit = UITableViewRowAction(style: .destructive, title: "edit") { (action, index) in
+            let alertEdit = UIAlertController(title: "Do you want edit?", message: nil, preferredStyle: .alert)
+            
+            let alertAction = UIAlertAction(title: "edit", style: .default, handler: { (_) in
+               
+                print("Person Edit Name: \(person.name!)")
+                print("Person Edit Age: \(person.age)")
+            
+                self.performSegue(withIdentifier: "showEdit", sender: person)
+            })
+            alertEdit.addAction(alertAction)
+            self.present(alertEdit, animated: true, completion: nil)
+            self.performSegue(withIdentifier: "showEdit", sender: person)
+        }
+        edit.backgroundColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
+        return [delete,edit]
     }
     
 }

@@ -14,9 +14,15 @@ class AddUpdatePersonUIViewController: UIViewController {
     @IBOutlet var personAgeTextField: UITextField!
     
     var people = [Person]()
+    var peopleHolder: Person?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("personHolder: \(peopleHolder)")
+        if(peopleHolder != nil){
+            personNameTextField.text = peopleHolder?.name
+            personAgeTextField.text = String(describing: peopleHolder?.age)
+        }
     }
     @IBAction func savePerson(_ sender: Any) {
         // save

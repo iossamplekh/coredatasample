@@ -26,14 +26,14 @@ class ViewController: UIViewController {
         }
         alert.addTextField { (textField) in
             textField.placeholder = "input person age"
-            //textField.keyboardType = .numberPad
+            textField.keyboardType = .numberPad
         }
         
         let alertAction = UIAlertAction(title: "Post", style: .default) { (_) in
-            let name = alert.textFields?.first?.text
+            let name = alert.textFields?.first?.text! ?? ""
             let age = alert.textFields?.last?.text
             print("Name: \(name)")
-            print("Age: \(age)")
+            print("Age: \(age!)")
         }
         
         alert.addAction(alertAction)

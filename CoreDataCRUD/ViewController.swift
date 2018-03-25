@@ -77,6 +77,23 @@ extension ViewController: UITableViewDataSource,UITableViewDelegate{
     override func viewWillAppear(_ animated: Bool) {
         getPeople()
     }
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .destructive, title: "delete") { (action, index) in
+            let alertDelete = UIAlertController(title: "Do you want delete?", message: nil, preferredStyle: .alert)
+            
+            let alertAction = UIAlertAction(title: "delete", style: .default) { (_) in
+                self.coreDataCRUDtableView.beginUpdates()
+                self.people.remove(at: indexPath.row)
+                self.coreDataCRUDtableView.deleteRows(at: [indexPath],with: .fade)
+                self.coreDataCRUDtableView.endUpdates()
+            }
+            
+            alertDelete.addAction(alertAction)
+            self.present(alertDelete, animated: true, completion: nil)
+            self.coreDataCRUDtableView.reloadData()
+        }
+        return [delete]
+    }
     
 }
 

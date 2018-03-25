@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getPeople()
+        coreDataCRUDtableView.dataSource = self
+        coreDataCRUDtableView.delegate = self
     }
 
     @IBAction func onPlusTapped(_ sender: Any) {
@@ -59,7 +61,7 @@ class ViewController: UIViewController {
         }catch{}
     }
 }
-extension ViewController: UITableViewDataSource{
+extension ViewController: UITableViewDataSource,UITableViewDelegate{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -75,5 +77,6 @@ extension ViewController: UITableViewDataSource{
     override func viewWillAppear(_ animated: Bool) {
         getPeople()
     }
+    
 }
 

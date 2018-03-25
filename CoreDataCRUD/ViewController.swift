@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
 
@@ -16,7 +17,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let fetchRequest: NSFetchRequest<Person> = Person.fetchRequest()
+        do{
+            let person = try PersistenceService.context.fetch(fetchRequest)
+            self.people = person
+            self.coreDataCRUDtableView.reloadData()
+        }catch{}
     }
 
     @IBAction func onPlusTapped(_ sender: Any) {
